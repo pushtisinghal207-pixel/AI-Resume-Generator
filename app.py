@@ -8,7 +8,7 @@ st.markdown("""## User can create or
 download AI created Resume based on high ATS 
 score""")
 # step 2: load modules
-import IPython as ip
+
 import os
 import time
 import langchain
@@ -82,6 +82,16 @@ def prompt_generator(agent = agent):
     f.write(response.content[-1]['text'])
   return "Prompt file generated Successfully, agent can read it"
 
+    prompt_generator(model)
+
+#tool 2
+def resume_maker_prompt():
+    """this function just gives
+    updated prompt for model"""
+
+with open('prompt.py','r') as f:
+    prompt = f.read()
+return prompt
 
   # ===============GENERATE RESUME============
   prompt = """You are a helpful AI assistant
@@ -105,3 +115,4 @@ if st.button("Generate Resume"):
       code = response['messages'][-1].content[-1]['text']
 
       st.markdown(code)
+      st.html(code,width="stretch", unsafe_allow_javascript=True)
