@@ -84,7 +84,7 @@ def prompt_generator(agent = agent):
 
     prompt_generator(model)
 
-#tool 2
+#tool 2:
 def resume_maker_prompt():
     """this function just gives
     updated prompt for model"""
