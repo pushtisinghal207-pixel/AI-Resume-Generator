@@ -121,7 +121,7 @@ LOCATION = st.sidebar.multiselect('SELECT LOCATION:',
 JOB_PROFILE = ["PYTHON DEVELOPER",'GEN AI',
                'FULL-STACK DEVELOPER','DATA ANALYST']
 
-PROFILE = st.sidebar.multiselect('SELECT JOB ROLE",
+PROFILE = st.sidebar.multiselect("SELECT JOB ROLE",
                options = JOB_PROFILE)
 
 job_prompt = f"""Based on {PROFILE} jobs in {LOCATION}, I
