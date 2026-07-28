@@ -113,6 +113,24 @@ query = final_prompt+user_details
 
 import base64
 
+OPTIONS = ["DELHI","NOIDA","GURUGRAM",
+           'KANPUR','LUCKNOW','BANGLORE','PUNE']
+
+LOCATION = st.sidebar.multiselect('SELECT LOCATION:',
+                                  options = OPTIONS )
+JOB_PROFILE = ["PYTHON DEVELOPER",'GEN AI',
+               'FULL-STACK DEVELOPER','DATA ANALYST']
+
+PROFILE = st.sidebar.multiselect('SELECT JOB ROLE",
+                    options = JOB_PROFILE)
+
+job_prompt = f"""Based on {PROFILE} jobs in {LOCATION}, I
+want latest job news in using tavily,
+try top 10 search or whether available
+and give result like naukri theme design with
+job name, job desc, salary,
+apply link and OUTPUT must be in HTML no markdowns"""
+
 if st.button('generate resume'):
   with st.spinner("runnign agent"):
 
